@@ -875,6 +875,46 @@
 # --- Classes
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Not specific to Python
+# Classes are used to define new types
+# Basic / simple types: Numbers, Strings, Booleans
+# Complex types: Lists, Dictionaries
+
+# These identified types can't always be used to model complex concepts
+# Think of a concept of a point or a shopping cart
+# A shopping cart is not a boolean, list, or dictionary, it's different
+
+# We can use classes to define new types to model real concepts
+
+# For this lesson, we will create a new class called 'point'
+
+# With this class 'Point' created, we can create new objects
+# An object is an instance of a class
+# Where a class defines the template or blueprint of creating objects
+# And objects are the actual instances based on that blueprint
+
+# class Point:  # Pascal Naming Convention when first letter of every word is capitalized. Do not use underscores.
+#     def move(self):  # self - special keyword
+#         print("move")
+#
+#     def draw(self):
+#         print("draw")
+#
+#
+# point1 = Point()  # This creates a new object and returns it. We can then store it in a variable
+# point1.x = 10  # Apart from methods, these objects can also have attributes. These attributes are variables that belong to a particular object
+# point1.y = 20
+# print(point1.x)
+# point1.draw()
+#
+# point2 = Point()  # Each object is a different instance of our 'Point' class
+# point2.x = 1
+# print(point2.x)
+
+# Summary: Classes are used to define new types
+# These classes can have methods that are defined within the body of the class
+# They can also have attributes that we set anywhere in our programs
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -882,6 +922,45 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # --- Constructors
 # ---------------------------------------------------------------------------------------------------------------------
+
+# We can create a point object with an x or y coordinate
+# A constructor is a function that gets called at the time of creating an object
+
+# class Point:
+#     def __init__(self, x, y):  # init is short for initialize. This method/or function gets called when we create a new point object.
+#         # This method is also what's considered a constructor. This method is used to construct or create an object
+#         self.x = x  # self is a reference to the current object
+#         self.y = y
+#
+#     def move(self):
+#         print("move")
+#
+#     def draw(self):
+#         print("draw")
+#
+#
+# point = Point(10, 20)
+# point.x = 11
+# print(point.x)
+
+# Exercise: Define a new type called 'Person'
+# Each Person object should have a name attribute and a talk() method
+
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+#
+#     def talk(self):
+#         print(f"Hi, I am {self.name}.")
+#
+#
+# person1 = Person('John Smith')
+# person1.talk()
+#
+# person2 = Person('Bob Bob')
+# person2.talk()
+
+# Each object, person1 and person2, is a different instance of the 'Person' class
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -891,6 +970,36 @@
 # --- Inheritance
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Inheritance is a mechanism for reusing code
+# Repeating or duplicating code is bad - D.R.Y : Don't Repeat Yourself
+
+# In this example, we can create a parent class called 'Mammal'
+# and have the Dog and Cat class inherit the method from Mammal
+
+# class Mammal:
+#     def walk(self):
+#         print("walk")
+#
+#
+# class Dog(Mammal):
+#     def bark(self):
+#         print("BARK BARK")
+#     # pass  # We are telling Python interpreter to pass this line. This resolves the issue with an empty class
+#
+#
+# class Cat(Mammal):
+#     def meow(self):
+#         print("MEOW")
+#
+#
+# dog1 = Dog()
+# dog1.walk()
+# dog1.bark()
+#
+# cat1 = Cat()
+# cat1.walk()
+# cat1.meow()
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -899,6 +1008,44 @@
 # --- Modules
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Modules are files with some Python code
+# Used to organize code into multiple files
+# Think of a supermarket - different sections for fruits, vegetables, cleaning supplies, etc.
+
+# For example, we can take the below functions, break them out into a "converter module (files)
+# and we can import that converter into any program that needs a converter function
+
+# Cut this code and paste it into the 'converters.py' module
+# def lbs_to_kg(weight):
+#     return weight * 0.45
+#
+#
+# def kg_to_lbs(weight):
+#     return weight / 0.45
+
+# import converters
+# from converters import lbs_to_kg  # after import, press control + space bar
+# # you can directly call the function you need to use
+#
+# print(lbs_to_kg(160))  # This is cleaner than below,
+# # since you don't need to prefix with the module name to use the function
+#
+# print(converters.lbs_to_kg(160))
+
+
+# Exercise: Write function 'find_max()', it should take a list and find the largest number in list
+# Afterwards, put the function in a module called 'utils'
+# Then import utils into current app.py module and call the find_max() function
+# Finally get the result and print it to the terminal
+
+from utils import find_max
+
+numbers = [10, 3, 6, 2]
+maximum = find_max(numbers)  # The warning under 'max' is saying we are
+# changing the meaning of the original max function. This is considered a bad practice
+# print(max(numbers))  # purple 'max' indicates it is a built-in function
+
+print(maximum)
 
 # ---------------------------------------------------------------------------------------------------------------------
 
