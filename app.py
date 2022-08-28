@@ -1,16 +1,23 @@
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Date: 8/23/2022
 # --- Project: Python Tutorial - Python Full Course for Beginners
 # --- Source: https://www.youtube.com/watch?v=_uQrJ0TkZlc&list=WL&index=1&t=61s&ab_channel=ProgrammingwithMosh
+# ---------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Input
+# ---------------------------------------------------------------------------------------------------------------------
 
 # name = input('What is your name? ')
 # fav_color = input('What is your favorite color? ')
 # print(name + ' likes ' + fav_color)
+# ---------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Type Conversion
+# ---------------------------------------------------------------------------------------------------------------------
 
 # birth_year = input('Birth year: ')
 # print(type(birth_year))
@@ -23,8 +30,12 @@
 # weight_kg = float(weight_lbs) * 0.453592
 # print(type(weight_kg))
 # print(weight_kg)
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Strings
+# ---------------------------------------------------------------------------------------------------------------------
 
 # Examples when using double quote vs. single quote
 # course = "Python's Course for Beginners"
@@ -53,9 +64,12 @@
 
 # name = 'Jennifer'
 # print(name[1:-1])  # returns character starting from index one, all the way to end but excluding the last index
+# ---------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Formatted Strings
+# ---------------------------------------------------------------------------------------------------------------------
 
 # non-formatted string
 # first_name = 'John'
@@ -68,32 +82,191 @@
 # last_name = 'Smith'
 # msg = f'{first_name} [{last_name}] is a coder'
 # print(msg)
+# ---------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 # --- String Methods
+# ---------------------------------------------------------------------------------------------------------------------
+
 # For example, upper() is a function that belongs to strings object exclusively, so it is a method
 # print() and len() are general purpose functions that are not specific to any type of object, so they are not methods
+#
+# Other String methods include: upper(), lower(), title(), find(), replace(),
+# In Operator
 
 # course = 'Python for Beginners'
+#
 # print(len(course))
-# course.upper()
+# print(course.upper())
+# print(course.lower())
+# print(course.title())
+#
+# print(course.find('Beginners'))  # find() method -- searches for index of a character or sequence of characters
+#
+# print(course.replace('Beginners', 'Absolute Beginners'))  # replace()
+# print(course.replace('P', 'J'))
+#
+# print('Python' in course)  # in operator -- boolean expression
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Arithmetic Operations
+# ---------------------------------------------------------------------------------------------------------------------
+
+# print(10 + 3)
+# print(10 - 3)
+# print(10 * 3)
+# print(10 / 3)
+#
+# print(10 // 3)  # // -- returns integer value
+# print(10 % 3)  # % modulus -- returns remainder of the division
+# print(10 ** 3)  # ** exponent -- power
+
+# Augmented assignment operator
+
+# x = 10
+# x = x + 3  # incrementing a number
+# x += 3  # += augmented assignment operator
+# x -= 3  # augmented assignment operator
+# print(x)
+# ---------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Operator Precedence
+# ---------------------------------------------------------------------------------------------------------------------
+
+# x = (10 + 3) * 2 ** 2
+# print(x)
+
+# Order
+# Parenthesis -- always takes priority
+# Exponentiation -- 2 ** 3
+# Multiplication or Division
+# Addition or Subtraction
+# ---------------------------------------------------------------------------------------------------------------------
 
 
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Math Functions
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Math module -- a module is a separate file with some reusable code
+# Think of supermarket; different sections of fruits, vegetables, cleaning supplies, etc.
+# Each section is a module
+# Google python 3 math module to look at math function documentation
 
 
+# import math
+#
+# print(math.ceil(2.9))  # ceil() -- the ceiling of the value
+# print(math.floor(2.9))  # floor() -- the floor of the value
+#
+# x = 2.9
+# print(round(x))
+# print(abs(-2.9))  # abs() -- absolute value; always returns the positive representation of that value
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- If Statements
+# ---------------------------------------------------------------------------------------------------------------------
+
+# is_hot = False
+# is_cold = False
+#
+# if is_hot:
+#     print("It's a hot day")
+#     print("Drink plenty of water")
+# elif is_cold:
+#     print("It's a cold day")
+#     print("Wear warm clothes")
+# else:
+#     print("It's a lovely day")
+# print("Enjoy your day")
 
 
+# house_price = 1000000
+# has_good_credit = True
+#
+# if has_good_credit:
+#     down_payment = house_price * 0.10
+#
+# else:
+#     down_payment = house_price * 0.20
+# print(f"Down payment: ${down_payment}")
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Logical operators
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Used when we have multiple conditions
+# and operator -- both conditions must be true
+# or Operator -- at least one conditions must be true
+# and not operator -- inverses any boolean value given; false becomes true; true becomes false
+
+# If applicant has high income AND good credit; Eligible for a loan
+# has_high_income = False
+# has_good_credit = True
+#
+# if has_high_income and has_good_credit:
+#     print("Eligible for loan")
+# else:
+#     print("Ineligible for loan")
+#
+#
+# if has_high_income or has_good_credit:
+#     print("Eligible for loan")
 
 
+# If applicant has high income AND doesn't have a criminal record; Eligible for a loan
+# has_good_credit = True
+# has_criminal_record = False
+#
+# if has_good_credit and not has_criminal_record:
+#     print("Eligible for loan")
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Comparison Operators
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Where we want to compare a variable with a value
+# boolean expression's
+# >, >=, <, <
+# == equality operator
+# = assignment operator; changing the value, not expressing a boolean value
+# !=
+
+# temperature = 35
+#
+# if temperature > 30:  # boolean expression
+#     print("It's a hot day")
+# else:
+#     print("It's not a hot day")
+
+# name = input("What is your name? ")
+# name_length = len(name)
+#
+# if name_length < 3:
+#     print("Name must be at least 3 characters")
+# elif name_length > 50:
+#     print("Name can only be a maximum of 50 characters")
+# else:
+#     print("Name looks good!")
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Weight Converter Program
+# ---------------------------------------------------------------------------------------------------------------------
 
 # weight = int(input("Weight: "))  # Pass int conversion on input so that it can be calculated in if statement
 #
@@ -107,7 +280,13 @@
 #     print(f"Your weight is {converted} lbs" )
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- While Loops
+# ---------------------------------------------------------------------------------------------------------------------
+
 # Executes block of code multiple times
 
 # i = 1
@@ -118,7 +297,13 @@
 # print("Done")
 
 
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Building a Guessing Game
+# ---------------------------------------------------------------------------------------------------------------------
+
 # Shift + F6 to refactor a variable to another designated value
 # While loops also can run an else block
 
@@ -135,8 +320,13 @@
 # else:
 #     print("Sorry, you failed!")
 
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Building the Car Game
+# ---------------------------------------------------------------------------------------------------------------------
+
 # D.R.Y -- Don't Repeat Yourself (all of those lower methods below)
 
 # command = ""
@@ -148,11 +338,13 @@
 #         if started:
 #             print("Car is already started")
 #         else:
-#             started = True  # The else condition executes first, and sets started to True, so if ran again, the above if statement executes
+#             started = True  # The else condition executes first, and sets started to True, so if ran again,
+#                             # the above if statement executes
 #             print("The car has started")
 #     elif command == "stop":
 #         if not started:
-#             print("The car is already stopped")  # If the car has not been started, this will output from the beginning.
+#             print("The car is already stopped")  # If the car has not been started,
+#                                                  # this will output from the beginning.
 #         else:
 #             started = False
 #             print("The car has stopped")
@@ -167,8 +359,13 @@
 #     else:
 #         print("Sorry, what did you enter?")
 
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- For Loops
+# ---------------------------------------------------------------------------------------------------------------------
+
 # Iterate over items of a collection, such as a string
 # Which is a sequence of characters, so it looks like a collection
 
@@ -198,8 +395,13 @@
 #     total += price
 # print(f"Total: {total}")
 
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Nested Loops
+# ---------------------------------------------------------------------------------------------------------------------
+
 # Adding one loop inside another loop
 # Coordinates, combination of x and y value
 
@@ -242,8 +444,12 @@
 #         output += 'x'
 #     print(output)
 
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Lists
+# ---------------------------------------------------------------------------------------------------------------------
 
 # names = ['John', 'Bob', 'Mosh', 'Sarah', 'Mary']
 # print(names[0])  # specifying index to pull out specific item in the list
@@ -277,8 +483,13 @@
 #         max_val = number
 # print(max_val)
 
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- 2D Lists
+# ---------------------------------------------------------------------------------------------------------------------
+
 # In math, there's a concept called matrix; a rectangular array of numbers
 # [
 #     1 2 3
@@ -305,6 +516,36 @@
 #     for item in row:
 #         print(item)  # We get all items in our list
 
-
+# ---------------------------------------------------------------------------------------------------------------------
 # --- List Methods
+# ---------------------------------------------------------------------------------------------------------------------
 
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Tuples
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Unpacking
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Dictionaries
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Emoji Converter
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Functions
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Parameters
+# ---------------------------------------------------------------------------------------------------------------------
