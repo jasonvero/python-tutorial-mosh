@@ -585,6 +585,16 @@
 # --- Tuples --- #
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Tuples are similar to lists, but unlike lists, you cannot modify tuples. They are immutable
+# Tuples use parentheses () and lists use brackets []
+
+# You will typically use lists, but there may be a situation where you don't want your list to accidently change
+# In this instance, you'd use a tuple
+
+# __dict__ magic method
+
+# numbers = (1, 2, 3)
+# print(numbers[0])
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -593,6 +603,22 @@
 # --- Unpacking
 # ---------------------------------------------------------------------------------------------------------------------
 
+# coordinates = (1, 2, 3)  # coordinates for x, y, z
+# x = coordinates = [0]
+# y = coordinates = [1]
+# z = coordinates = [2]
+
+# unpacking will use far less code than above
+# coordinates = (1, 2, 3)  # as a tuple
+#
+# x, y, z = coordinates
+# print(x)
+
+# coordinates = [1, 2, 3]  # as a list
+#
+# x, y, z = coordinates
+# print(y)
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -600,6 +626,53 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # --- Dictionaries
 # ---------------------------------------------------------------------------------------------------------------------
+
+# You use a dictionary when you want to store information that comes as key-valued pairs
+# Use curly braces {} to define a dictionary
+# Each key in a dictionary must be unique. Like in a real world dictionary. One word listed, with its definition
+
+# Example: A customer and their attributes
+    # Name: John Smith
+    # Email: john@gmail.com
+    # Phone: 1234
+    # What we have here are key value pairs: Name is a key, and associated value is John Smith
+
+# customer = {
+#     "name": "John Smith",
+#     "age": 30,
+#     "is_verified": True
+# }
+#
+# customer["name"] = "Jack Smith"
+# customer["birthdate"] = "Jan 2 1980"
+# print(customer.get("name"))  # get() method to access a key and its value
+# print(customer.get("birthdate", "Jan 1 1980"))  # if key doesn't exist, returns the 'None' value, the absence of a value
+#                                                 # you can also set a default value after the comma
+# print(customer["name"])
+# print(customer["birthdate"])
+
+# Exercise: Type in phone number, and it outputs the digits into words
+
+# phone = input("Phone: ")
+#
+# digits_mapping = {
+#     "1": "One",
+#     "2": "Two",
+#     "3": "Three",
+#     "4": "Four",
+#     "5": "Five",
+#     "6": "Six",
+#     "7": "Seven",
+#     "8": "Eight",
+#     "9": "Nine"
+# }
+#
+# output = ""
+# for char in phone:  # need to loop through the phone string
+#     output += digits_mapping.get(char, "!") + " " # these quotes are adding a space to the end of each output string
+#         # pass char as the key in this dictionary, "!" is a default value
+#         # add what gets passed to an output string variable, above the for loop
+# print(output)
 
 
 # ---------------------------------------------------------------------------------------------------------------------
