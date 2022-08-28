@@ -682,6 +682,17 @@
 # --- Emoji Converter
 # ---------------------------------------------------------------------------------------------------------------------
 
+# message = input(">")
+# words = message.split(' ')  # goes through string, and any time it finds this character, it serves as a boundary
+# emojis = {
+#     ":)": "😀",  # control + command + space bar
+#     ":(": "😞"
+# }
+# output = ""
+# for word in words:
+#     output += emojis.get(word, word) + " "
+# print(output)
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -689,6 +700,19 @@
 # ---------------------------------------------------------------------------------------------------------------------
 # --- Functions
 # ---------------------------------------------------------------------------------------------------------------------
+
+# Breaking up our code in more manageable chunks
+# A Function is a container for a few lines of code that perform a specific task
+
+# def greet_user():  # means define; Python knows def means you are trying to define a function
+#     print('Hi there!')
+#     print('Welcome aboard')
+#
+#
+# # When defining a function, should add two line breaks after the function
+# print("Start")
+# greet_user()
+# print("Finish")
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -698,5 +722,243 @@
 # --- Parameters
 # ---------------------------------------------------------------------------------------------------------------------
 
+# def greet_user(first_name, last_name):  # inside parenthesis, we can add parameters, which are placeholders for receiving information
+#     print(f'Hi {first_name} {last_name}!')  # take this line of code with a specific function, and can pass it in the function multiple times
+#     print('Welcome aboard')
+#
+#
+# print("Start")
+# greet_user("Mary", "Jane")  # An argument is the value supplied to a function. Mary is an argument that is passed to the name parameter
+# print("Finish")
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Keyword Arguments
+# ---------------------------------------------------------------------------------------------------------------------
+
+# def greet_user(first_name, last_name):
+#     print(f'Hi {first_name} {last_name}!')
+#     print('Welcome aboard')
+
+
+# print("Start")
+# greet_user("Smith", "John")  # These are positional arguments, meaning their order matters
+# print("Finish")
+
+
+# print("Start")
+# greet_user(last_name="Smith", first_name="John")  # In Keyword Arguments, position doesn't matter
+# print("Finish")
+
+# Most of the time, you'd use positional arguments
+# But in certain situations, keyword arguments help with code readability
+# Like when the arguments being passed are hard to determine what parameter they should be passed to
+# For example: if a function calc_cost(50, 5, 0.1), it's hard to determine what these numbers mean
+# Keyword Arguments help here: calc_cost(total=50, shipping=5, discount=0.1)
+
+
+# print("Start")
+# greet_user("John", last_name="Smith")  # Keyword Arguments should always come after Positional Arguments
+# print("Finish")
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Return Statement
+# ---------------------------------------------------------------------------------------------------------------------
+
+# How to create functions that return values
+# Helpful if doing a calculation in a function, and you want to return a result
+
+# def square(number):  # Function calculating square of a number
+#     return number * number  # To return the calculation outside this function, use return statement
+#
+#
+# print(square(3))  # We are passing square(3) as an argument to the print() function
+
+
+# def square(number):
+#     print(number * number)  # By default, all functions return the value 'None'
+# None is the absence of a value; nothing, or NULL
+#
+#
+# print(square(3))
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Creating a Reusable Function
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Exercise: Reorganize Emoji Converter into a function
+
+# You don't want to put the input() function into our reusable function
+# input() can be used to receive input from terminal, but in other apps, it could be received in a GUI
+# input() may not be reusable, so don't put it in our reusable function
+
+# Similarly, we shouldn't include print() into our reusable function
+# How we decide to output can be different between one program and another
+
+# Takeaway: Your reusable function should not be worried about inputting or outputting
+
+
+# def emoji_converter(message):
+#     words = message.split(' ')
+#     emojis = {
+#         ":)": "😀",
+#         ":(": "😞"
+#     }
+#     output = ""
+#     for word in words:
+#         output += emojis.get(word, word) + " "
+#     return output
+#
+#
+# message = input(">")
+# print(emoji_converter(message))
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Exceptions
+# ---------------------------------------------------------------------------------------------------------------------
+
+# exit code 0 means we executed code with no errors
+# any exit code other than 0 means there was an error and program has crashed
+# ValueError is a type of error
+# These type of errors are considered 'Exceptions' which crash our program
+
+# try:
+#     age = int(input('Age: '))
+#     income = 20000
+#     risk = income / age  # This throws a ZeroDivisionError, which the except block we've defined below won't catch
+#     print(age)
+# except ZeroDivisionError:
+#     print('Age cannot be 0')
+# except ValueError:
+#     print('Invalid value')
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Comments
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Avoid using comments to explain what the code does
+# Use comments to explain "Why's" and "How's" not "What's"
+# If you've made certain assumptions, call this out in comments
+
+# print Sky is blue -- # example of a bad comment
+# Not only is the comment wordy, but if I change the string to 'Ocean', the comment becomes outdated
+# print("Ocean is blue")
+
+
+# Calculates and returns the square of a number -- # repetitive and creates noise in code
+# def square(number):
+#     return number * number
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Classes
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Constructors
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Inheritance
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Modules
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Packages
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Generating Random Values
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Working with Directories
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Pypi and Pip
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Project 1: Automation with Python
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Project 2: Machine Learning with Python
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- Project 3: Building a Website with Django
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
