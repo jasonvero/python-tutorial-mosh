@@ -512,17 +512,80 @@
 
 # Using a for loop to iterate through the matrix
 
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
+#
 # for row in matrix:  # in each iteration, row will contain one value/item in the list
 #     for item in row:
 #         print(item)  # We get all items in our list
 
 # ---------------------------------------------------------------------------------------------------------------------
-# --- List Methods
+
+
+# ---------------------------------------------------------------------------------------------------------------------
+# --- List Methods --- #
+# ---------------------------------------------------------------------------------------------------------------------
+
+# Operations we can perform on a list
+
+# numbers = [5, 5, 2, 1, 7, 4]
+
+# numbers.append(20)  # Add a new item to the end of the list
+# numbers.insert(0, 10)  # Add a new item to the list; first specify index then specify value
+# numbers.remove(5)  # Remove item from list
+# print(numbers)
+#
+# numbers.clear()  # Clear all items from the list
+# print(numbers)
+
+# numbers.pop()  # Removes last item on the list
+# print(numbers)
+
+# print(numbers.index(4))  # Check for the existence of an item within a list
+
+# print(50 in numbers)  # 'in' operator is another way to check fo the existence of an item within a list
+#                       # unlike the index() method, this in expression doesn't generate an error
+
+# print(numbers.count(5))  # Method for counting occurrences in an item
+
+# print(numbers.sort())  # sort() to sort your lists
+#                        # None represents the absence of a value
+#                        # This sort method doesn't return any values, it sorts the list in place
+
+# So format the sort as below
+# numbers.sort()
+# numbers.reverse()  # Reverses the sort of the list
+# print(numbers)
+
+# numbers = [5, 5, 2, 1, 7, 4]
+# numbers2 = numbers.copy()  # copy() gets a copy of our list; remains independent of the list it copies
+# numbers.append(10)
+#
+# print(numbers)
+# print(numbers2)
+
+# Exercise: Write a program to remove the duplicates in a list
+
+# numbers = [2, 2, 4, 6, 3, 4, 6, 1]
+# uniques = []  # Create empty list to store the unique items
+#
+# for number in numbers:
+#     if number not in uniques:  # if number in numbers is not in uniques empty list, append number to the empty list
+#         uniques.append(number)
+# print(uniques)
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-# --- Tuples
+# --- Tuples --- #
+# ---------------------------------------------------------------------------------------------------------------------
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 
 
@@ -532,7 +595,13 @@
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Dictionaries
+# ---------------------------------------------------------------------------------------------------------------------
+
+
 # ---------------------------------------------------------------------------------------------------------------------
 
 
@@ -542,10 +611,19 @@
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Functions
 # ---------------------------------------------------------------------------------------------------------------------
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # --- Parameters
+# ---------------------------------------------------------------------------------------------------------------------
+
+
 # ---------------------------------------------------------------------------------------------------------------------
