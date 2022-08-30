@@ -1038,14 +1038,14 @@
 # Then import utils into current app.py module and call the find_max() function
 # Finally get the result and print it to the terminal
 
-from utils import find_max
-
-numbers = [10, 3, 6, 2]
-maximum = find_max(numbers)  # The warning under 'max' is saying we are
-# changing the meaning of the original max function. This is considered a bad practice
-# print(max(numbers))  # purple 'max' indicates it is a built-in function
-
-print(maximum)
+# from utils import find_max
+#
+# numbers = [10, 3, 6, 2]
+# maximum = find_max(numbers)  # The warning under 'max' is saying we are
+# # changing the meaning of the original max function. This is considered a bad practice
+# # print(max(numbers))  # purple 'max' indicates it is a built-in function
+#
+# print(maximum)
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -1054,6 +1054,31 @@ print(maximum)
 # --- Packages
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Packages are another way to organize your code
+# Packages are a container for multiple modules. A directory or folder to group related modules
+
+# Think of mall: Different packages for Men's, Women's, and Kids clothing
+# And when you go to the Men's section, there will be different modules: pants, shirts, jackets, socks
+
+# Add new directory: ecommerce
+# Put all modules related to ecommerce app: sales, shipping, customer service, etc.
+# Having an empty directory, still need to add a special file within it
+# Python file - __init__.py
+# This is the manual way, but the automatic way is to just create a Python Package directly
+
+# Create module 'shipping' in ecommerce package
+
+# # First Approach
+# import ecommerce.shipping  # prefix the name of package (ecommerce) to get the module (shipping)
+# ecommerce.shipping.calc_shipping()
+
+# # Second, less wordy approach
+# from ecommerce import calc_shipping
+# calc_shipping()
+
+# # Or, below
+# from ecommerce import shipping
+# shipping.calc_shipping()
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -1061,6 +1086,41 @@ print(maximum)
 # ---------------------------------------------------------------------------------------------------------------------
 # --- Generating Random Values
 # ---------------------------------------------------------------------------------------------------------------------
+
+# Google : Python 3 Module Index
+# These are all the modules built for Python: Datetime, email, etc.
+
+# import random  # Because this is a built-in module, we do not need a module file to import
+
+# for i in range(3):  # Using range() function to create a range object. We can loop through object 3 times in for loop
+#     print(random.random())
+
+# for i in range(3):
+#     print(random.randint(10, 20))  # Get random values between a particular age
+
+# members = ['John', 'Mary', 'Bob', 'Mosh']
+# print(random.choice(members))  # Randomly picking an item from a list
+
+# Exercise: Write program to roll a die
+# Define class called 'Dice'
+# Within the class, there will be a method called roll() - when we call the method, we get a tuple
+# Tuple - a read only list
+
+# import random
+#
+#
+# class Dice:
+#     def roll(self):
+#         first = random.randint(1, 6)
+#         second = random.randint(1, 6)
+#         return first, second  # Return as a tuple.
+#         # In Python, when returning a tuple as a function, don't need to add parentheses
+#
+#
+# dice = Dice()
+#
+# print(dice.roll())
+
 
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -1070,6 +1130,41 @@ print(maximum)
 # --- Working with Directories
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Google : Python 3 Module Index
+# Module: pathlib - Object-oriented filesystem paths. Meaning it provides classes
+# which can be used to create objects to work with directories and files
+
+from pathlib import Path
+
+# Absolute path: Starts at the root of the hard disk
+    # Windows: c:\Program Files\Microsoft
+    # Mac: /user/local/bin
+# Relative path: If we want to access the 'ecommerce' path directory
+
+# path = Path("ecommerce")
+# print(path.exists())
+
+# path2 = Path("emails")
+# path2.mkdir()  # this method will make a new directory
+# path2.rmdir()  # this method will remove a directory
+
+
+# path = Path()
+# print(path.glob('*.py'))  # this method can search for files or directories in the current path
+# passing an asterisk '*.*' means to search for all files in current directory
+# '*.py' - searching for all the Python files
+# '*.xls' - searching for all the Excel files
+
+# We can iterate or loop through the generator object
+
+# path = Path()
+# for file in path.glob('*'):
+#     print(file)
+
+# path = Path()
+# for file in path.glob('*.py'):
+#     print(file)
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -1078,6 +1173,15 @@ print(maximum)
 # --- Pypi and Pip
 # ---------------------------------------------------------------------------------------------------------------------
 
+# pypi.org
+# Directory called Python Package Index or PyPI
+# These packages are what people have built for their projects and have been published
+
+# For example: Sending text messages in your program
+# go to pypi.org and search for sms
+
+# For this exercise, search for openpyxl on pypi.org
+# this package is used for working on Excel worksheets
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -1085,6 +1189,94 @@ print(maximum)
 # ---------------------------------------------------------------------------------------------------------------------
 # --- Project 1: Automation with Python
 # ---------------------------------------------------------------------------------------------------------------------
+
+# Processing spreadsheets
+
+# import openpyxl as xl  # alias xl
+# from openpyxl.chart import BarChart, Reference  # In this package, we have a module called 'chart'
+# # Within this module, we have classes called 'BarChart' and 'Reference'
+#
+#
+# wb = xl.load_workbook('transactions.xlsx')  # Access workbook
+# sheet = wb['Sheet1']  # Access sheet
+#
+# cell = sheet['a1']  # Give coordinate of cell; column and row
+# # cell_a = sheet.cell(1, 1)  # Gives the exact same as above, but use the cell() method of the sheet object
+# # Pass the row and the column (1, 1)
+#
+#
+# # print(cell.value)
+#
+# # Now we want to iterate over all of these rows
+#
+# # First, how many rows do we have in this sheet object
+# # print(sheet.max_row)  # sheet has four rows
+#
+# # Need to add a for loop that will generate the numbers 1-4
+# for row in range(2, sheet.max_row + 1):  # By adding + 1, we will include the full range captured,
+#     # which is only 1, 2, 3, and then + 1 to get the 4th row
+#     # print(row)  # print this just to make sure program is running as expected
+#
+#     # We don't want the heading, so we want to ignore the first row
+#     # Go back above and change range() function first parameter from 1 to 2
+#
+#     cell = sheet.cell(row, 3)
+#     # print(cell.value)  # print to make sure we are grabbing the cells from column 3, and rows from row for loop
+#     corrected_price = cell.value * 0.9
+#     corrected_price_cell = sheet.cell(row, 4)  # gets the fourth column
+#     corrected_price_cell.value = corrected_price  # sets the value of this corrected_price_cell
+#
+#
+# # Now we want to add a chart by adding an import at the top
+# # Select a range of values: We will take the 4th column and rows 2-4
+#
+# values = Reference(sheet,
+#           min_row=2,  # Keyword arguments
+#           max_row=sheet.max_row,  # This selects all the cells in all the columns, not what we want
+#           min_col=4,  # Only want values in 4th column, need to set more keyword arguments
+#           max_col=4)
+#
+# chart = BarChart()  # Create instance of BarChart() class
+# chart.add_data(values)  # Pass values in add_data()
+# sheet.add_chart(chart, 'e2')  # Add this chart to our sheet
+#
+# wb.save('transactions2.xlsx')  # Saves the workbook into a new file
+
+
+# Code cleaned up
+
+# import openpyxl as xl
+# from openpyxl.chart import BarChart, Reference
+#
+#
+# def process_workbook(filename):  # create function and nest code within in
+#
+#     wb = xl.load_workbook(filename)
+#     sheet = wb['Sheet1']
+#
+#     for row in range(2, sheet.max_row + 1):
+#         cell = sheet.cell(row, 3)
+#         corrected_price = cell.value * 0.9
+#         corrected_price_cell = sheet.cell(row, 4)
+#         corrected_price_cell.value = corrected_price
+#
+#
+#     values = Reference(sheet,
+#               min_row=2,
+#               max_row=sheet.max_row,
+#               min_col=4,
+#               max_col=4)
+#
+#     chart = BarChart()
+#     chart.add_data(values)
+#     sheet.add_chart(chart, 'e2')
+#
+#     wb.save(filename)
+
+from excel_automation import process_workbook
+
+process_workbook(filename='transactions.xlsx')
+
 
 
 # ---------------------------------------------------------------------------------------------------------------------
