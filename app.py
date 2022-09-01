@@ -1273,11 +1273,10 @@ from pathlib import Path
 #
 #     wb.save(filename)
 
-from excel_automation import process_workbook
-
-process_workbook(filename='transactions.xlsx')
-
-
+# Moving the above code into a module and then import it
+# from excel_automation import process_workbook
+#
+# process_workbook(filename='transactions.xlsx')
 
 # ---------------------------------------------------------------------------------------------------------------------
 
@@ -1286,6 +1285,29 @@ process_workbook(filename='transactions.xlsx')
 # --- Project 2: Machine Learning with Python
 # ---------------------------------------------------------------------------------------------------------------------
 
+# Build a model or engine, and give it lots of data - 10K+ images of cats and dogs for example
+# More input data, the more accurate model will be
+
+# Steps:
+# 1. Import data - normally through csv file
+# 2. Clean the data - remove duplicates in data, remove bad data, conversions, etc. - model would learn bad patterns
+# 3. Split Data into Training/Test sets - If 1k+ pics of cats and dogs, 80% can be for training, and 20% for testing
+# 4. Create a Model - select an algorithm that will analyze the data
+# 5. Train the Model - feed the model training data; the model will then look for patterns in the data
+# 6. Make predictions - ask our model, is the image a cat or dog, and model will make a prediction
+# 7. Evaluate and Improve - assess accuracy of predictions; fine-tune parameters of model
+
+
+# Libraries and Tools:
+# Numpy - multi-directional array
+# Pandas - provides dataframes; a two-dimensional data structure like an Excel speadsheet
+# Matplotlib - 2-dimensional plotting library for creating graphs and plots
+# Scikit-Learn - provides common algorithms like decision trees, neural networks, etc.
+
+
+# Jupyter - good tool to inspect data
+
+# From this point of the tutorial we are working in Jupyter Notebooks
 
 # ---------------------------------------------------------------------------------------------------------------------
 
